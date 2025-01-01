@@ -1,0 +1,279 @@
+/* IncomePage.css */
+/* .income-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0px;
+   
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+   font-family: 'poppins';
+}
+.income-page-container h1 { /* Style the h1 directly */
+    /* font-size: 32px;
+    font-weight: bold;
+    padding: 20px;
+    margin: 0px 0px 0px 100; /* Added margin-bottom to separate from grid */
+    /* text-align: left;
+    min-height: 50;
+    margin-left: 300px;
+  
+  }
+.create-income-button{
+    padding: 1rem 2rem;
+    background-color: #3546AB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 180vh;
+    margin: 0px 100px 100px 100;
+    margin-bottom: 10vh;
+    
+}
+.income-page-container p { /* Style the paragraph directly */
+    /* margin-top: 200px; /* Add some top margin */
+    /* line-height: 1.6; /* Improve line spacing/readability */
+    /* color: #ec1010; /* Slightly darker text color */
+    /* text-align: justify; /* justify the text */
+    /* padding-left: 500px;
+}
+.export-pdf {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #3546AB;
+    left:500px;
+    padding-left:250px;
+  }
+  
+  .export-pdf {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .export-pdf:hover {
+    background-color: #3546AB;
+    color: white;
+  }  */ 
+  .income-page-container {
+    padding: 20px;
+    min-height: 100vh;
+    margin-left: 250px;
+    margin-top: -80px;
+  }
+
+  .income-page-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin: 100px;
+    margin-left: 6px;
+    display: inline-block; /* To align inline with the button */
+  }
+
+  
+  .create-income-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #3E3FD8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* Align with header */
+    margin-left: 620px; /* Spacing between header and button */
+    vertical-align: middle; /* Ensure proper alignment with the text */
+    transition: background-color 0.3s ease;
+    left: 300px;
+    
+
+  }
+  
+  .create-income-button:hover {
+    background-color: #3E3FD8;
+  }
+  /* .export-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 600px;
+    margin: 10px;
+    
+  }
+  
+  .export-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 6;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .export-container:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdown button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .dropdown button:hover {
+    background-color: #f1f1f1;
+  }
+   */
+   .export-container {
+    display: inline-block;
+    right:40%;
+    top: 20px;          /* Distance from the top of the page */
+    left: 50px;          /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust for horizontal centering */
+    
+  }
+
+
+  
+  .export-button {
+    background-color: #3E3FD8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 100px;
+    margin-top: 100px;
+   
+  }
+  
+  .export-button:hover {
+    background-color: #3E3FD8;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .export-container:hover .dropdown {
+    display: block;
+    
+  }
+  
+  .dropdown button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: white;
+    border: none;
+    text-align: left;
+    margin-left: 40px;
+
+    cursor: pointer;
+  }
+  
+  .dropdown button:hover {
+    background-color: #f1f1f1;
+  }
+  /* Center the p tag below the header and button */
+  .income-page-container p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-top: 30px; /* Add spacing from the header */
+  }
+  .income-page-container h2{
+    margin-right:800px;
+
+  }
+  .income-page-container h1{
+    right:100px
+  }
+  /* Styling for export buttons container */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+   font-family: 'poppins';
+}
+.income-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+ 
+  
+}
+
+.income-table th,
+.income-table td {
+  border: 1px solid #3E3FD8;
+  padding: 8px;
+ 
+  
+}
+
+.income-table th {
+  background-color: #dedefa;
+  text-align: left;
+ 
+}
+.total-amount {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #3E3FD8;
+  text-align: right; /* Align to the right */
+  font-weight: bold;
+}
+
+.income-page-container h2 {
+  margin-bottom: 10px;
+  margin-left: 6px;
+}
+/* .delete-button {
+  background-color: #f44336; /* Red color for delete */
+  /* color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+/* } */
