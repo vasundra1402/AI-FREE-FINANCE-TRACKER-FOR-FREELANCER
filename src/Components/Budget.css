@@ -69,6 +69,7 @@
   border: 2px dashed #3546AB;
   transition: background-color 0.2s, color 0.2s;
   height: 150px;
+  margin-top: 50px;
 }
 
 .budget-card.create-new:hover {

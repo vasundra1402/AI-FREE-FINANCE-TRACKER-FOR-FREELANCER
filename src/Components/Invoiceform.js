@@ -45,43 +45,7 @@ export default function Invoiceform( ){
     { sno: '', description: '', qty: '', price: '', amount: 0 },
   ]); 
 
-  /*const onLogoUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setLogo(reader.result); // Store the base64 string in the state
-      };
-      reader.readAsDataURL(file); // Read the image file as a base64 string
-    }
-  };
-    
-  const onSignatureUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setSignature(reader.result); // Store the base64 string of the signature image
-      };
-      reader.readAsDataURL(file); // Read the image file as a base64 string
-    }   
-  };*/
-
-  // Convert uploaded image to Base64 format
-  /*const handleImageUpload = (e, type) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-        if (type === 'logo') {
-            setLogo(reader.result); // Base64 string for logo
-            onLogoUpload(reader.result); // Pass Base64 to parent
-        } else if (type === 'signature') {
-            setSignature(reader.result); // Base64 string for signature
-            onSignatureUpload(reader.result); // Pass Base64 to parent
-        }
-    };
-    if (file) reader.readAsDataURL(file); // Read image as Base64
-}; */
+ 
   // set state for objects
   const handleFreelancerChange = (e) => {
     const { name, value } = e.target;
@@ -184,28 +148,6 @@ export default function Invoiceform( ){
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Prepare the data to be sent as JSON
-   /* const dataToSubmit = {
-      logo, // Base64 string for logo
-      signature, // Base64 string for signature
-      invoiceNumber,
-      invoiceDate,
-      paymentDueDate,
-      freelancerDetails,
-      companyDetails,
-      bankDetails,
-      tableRows,
-      grandTotal,
-    };
-
-    try {
-      const response = await fetch('http://localhost:8080/api/invoice', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json', // Set content type to JSON
-        },
-        body: JSON.stringify(dataToSubmit), // Send data as JSON
-      }); */
    const formData = new FormData();
    
     formData.append('logo', logo);
@@ -222,7 +164,7 @@ export default function Invoiceform( ){
     formData.append('paymentstatus', paymentstatus);
   
     try {
-      const response = await fetch('http://localhost:5000/api/invoice', {
+      const response = await fetch('https://finance-tracker-wknd.onrender.com/api/invoice', {
         method: 'POST',
         body: formData,
       });   
@@ -252,7 +194,7 @@ export default function Invoiceform( ){
 
       <main className="content">
         <header className="content-header">
-          <h2 style={{color:'#3f51b5',marginTop:'100px',marginRight:'470px'}} >Create a New Invoice </h2>
+          <h2 style={{color:'#000',marginTop:'100px',marginRight:'470px'}} >Create a New Invoice </h2>
         </header>
 
         <section  className="invoice-form">

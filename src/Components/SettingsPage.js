@@ -34,10 +34,10 @@ const SettingsPage = () => {
       <SlideNav />
       
       {/* Header Section */}
-      {/* <div className="settings-header">
+      <div className="settings-header">
         <h2>Account</h2>
         <button className="new-account-btn">+ New Account</button>
-      </div> */}
+      </div>
 
       {/* Account Section */}
       <div className="settings-section">

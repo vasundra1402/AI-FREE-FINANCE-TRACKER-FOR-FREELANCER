@@ -1,87 +1,3 @@
-// import React from "react";
-// import "./Login.css"; // Make sure to create and style this CSS file
-
-// function Login() {
-//   return (
-//     <div className="login-container">
-        
-//       {/* Logo Section */}
-//       <div className="logo">
-//         <h1>
-//           <span className="logo-icon">TN</span> TrackNest
-//         </h1>
-//       </div>
-
-//       {/* Login Form */}
-//       <div className="login-form">
-//         <h2>Log in</h2>
-//         <form>
-//           <div className="form-group">
-//             <label htmlFor="email"></label>
-//             <input
-//               type="email"
-//               id="email"
-//               placeholder="Your email"
-//               required
-//             />
-//           </div>
-//           <div className="form-group">
-//             <label htmlFor="password"></label>
-//             <input
-//               type="password"
-//               id="password"
-//               placeholder="Password"
-//               required
-//             />
-//           </div>
-//           <button type="submit" className="btn btn-login">
-//             Log In
-//           </button>
-//         </form>
-
-//         {/* Forgot Password */}
-//         <div className="forgot-password">
-//           <a href="#">Forgot password?</a>
-//         </div>
-
-//         {/* Social Logins */}
-//         <div className="social-login">
-//           <div className="social-buttons">
-//             <button className="btn btn-google">
-//             <img src="google_icon.png" alt="Icon" className="btn-icon" />
-//             Google</button>
-//             <button className="btn btn-facebook">
-//             <img src="facebook_icon.png" alt="Icon" className="btn-icon" />
-//             Facebook</button>
-//           </div>
-//         </div>
-
-//         {/* Sign Up Link */}
-//         <div className="signup-link">
-//           <p>
-//             Don't have an account? <a href="/signup">Sign Up</a>
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Login;
-
-// useEffect(() => {
-//   const fetchIncomes = async (newIncomeData) => {
-//     try {
-//       const response = await axios.get(`http://localhost:5000/signup/${email}`);
-//       // const newIncome = response.data; 
-//       setIncomes(response.data);{email:002,passwrod}
-//     } catch (error) {
-//       console.error('Error fetching incomes:', error);
-//     }
-//   };
-
-//   fetchIncomes();
-// }, []);
 
 
 
@@ -101,32 +17,11 @@ const Login = () => {
   const [userDetails, setUserDetails] = useState(null);
 
 
-  // useEffect(() => {
-  //   const fetchUserDetails = async () => {
-  //     if (email) {
-  //       try {
-  //         const response = await fetch(`http://localhost:5000/login?email=${email}`);
-  //         if (!response.ok) {
-  //           throw new Error((await response.json()).message || "Email not found");
-  //         }
-  //         const data = await response.json();
-  //         setUserDetails(data.user); // Store fetched user details
-  //         setMessage(""); // Clear any existing error messages
-  //       } catch (error) {
-  //         console.error('Error fetching user details:', error);
-  //         setMessage(error.message || "Email not found");
-  //         setUserDetails(null); // Reset user details if email is not found
-  //       }
-  //     }
-  //   };
-
-  //   fetchUserDetails();
-  // }, [email]);
       useEffect(() => {
       const fetchUserDetails = async () => {
         if (email) {
           try {
-            const response = await fetch(`http://localhost:5000/login?email=${email}`);
+            const response = await fetch(`https://finance-tracker-wknd.onrender.com/login?email=${email}`);
             const data = await response.json();
             if (!response.ok) {
               throw new Error(data.message || "Email or password incorrect");
@@ -162,21 +57,6 @@ const Login = () => {
       setMessage("Email not found. Please try again.");
     }
 };
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-
-  //   if (userDetails) {
-  //     if (userDetails.password === password) {
-  //       setMessage("Login successful!");
-  //       navigate("/dashboard");
-  //     } else {
-  //       setMessage("Incorrect password");
-  //     }
-  //   } else {
-  //     setMessage("Email not found. Please try again.");
-  //   }
-  // };
 
 
   return (

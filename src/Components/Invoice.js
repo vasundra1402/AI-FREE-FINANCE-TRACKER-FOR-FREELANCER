@@ -27,7 +27,7 @@ export default function Invoice(){
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/invoice');
+        const response = await fetch('https://finance-tracker-wknd.onrender.com/api/invoice');
         const data = await response.json();
 
         if (data.success) {
@@ -70,33 +70,24 @@ export default function Invoice(){
     return false;
   });
 
-    /*useEffect(() => {
-      fetch('http://localhost:8080/api/invoice')
-        .then((response) => response.json())
-        .then((data) => setInvoices(data.data))
-        .catch((error) => console.error('Error fetching invoices:', error));
-    }, []); */
-
+    
     const downloadInvoice =async (invoice) => {
       const doc = new jsPDF();
       const pageWidth = doc.internal.pageSize.getWidth();
       const margin = 10;
       const lineSpacing = 7;
-
+      doc.setFillColor(128, 0, 128); // Violet color for the background
+           const headerHeight = 15; // Set the height for the header
+          doc.rect(margin, margin, pageWidth - margin * 3, headerHeight, 'F');
       // Add Invoice Header
       doc.setFontSize(24);
       doc.setFont("times", "normal"); 
-      doc.setTextColor(128, 0, 128); // Violet color for heading
-      doc.text("Invoice", pageWidth / 2, margin + 5, { align: "center" });
-
-     // Image URLs
-/*const logoUrl = `http://localhost:8080/uploads/${invoice.logo}`;
-const signatureUrl = `http://localhost:8080/uploads/${invoice.signature}`;
-//   http://localhost:8080/uploads/${invoice.signature} */
+      doc.setTextColor(255, 255, 255); // Violet color for heading
+      doc.text("Invoice", pageWidth / 2, margin + headerHeight/ 2+3, { align: "center" });
 
 try {
-  const logoResponse = await fetch(`http://localhost:5000/api/invoice/logo/${invoice.logo}`);
-  const signatureResponse = await fetch(`http://localhost:5000/api/invoice/signature/${invoice.signature}`);
+  const logoResponse = await fetch(`https://finance-tracker-wknd.onrender.com/api/invoice/logo/${invoice.logo}`);
+  const signatureResponse = await fetch(`https://finance-tracker-wknd.onrender.com/api/invoice/signature/${invoice.signature}`);
 
   if (logoResponse.ok && signatureResponse.ok) {
     const logoBlob = await logoResponse.blob();
@@ -192,7 +183,7 @@ try {
   doc.text(`Address: ${invoice.freelancerDetails.address}`, freelancerX, currentY);
   currentY += lineSpacing;
   doc.text(`GST NO: ${invoice.freelancerDetails.gst}`, freelancerX, currentY);
-  currentY += lineSpacing * 7;
+  currentY += lineSpacing * 2;
 
   // Table with custom headings
   const tableStartY = currentY + lineSpacing ;
@@ -234,7 +225,7 @@ try {
 
   // Add Bank Details
   doc.setFontSize(14);
-  const bankStartY = termsStartY + 30;
+  const bankStartY = termsStartY + 40;
   doc.setTextColor(128, 0, 128);
   doc.text("Bank Details:", margin, bankStartY);
   doc.setFontSize(14);
@@ -258,7 +249,7 @@ try {
 
     const handlePaymentStatusChange = async (id, newStatus) => {
       try {
-        const response = await fetch(`http://localhost:5000/api/invoice/${id}`, {
+        const response = await fetch(`https://finance-tracker-wknd.onrender.com/api/invoice/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ paymentstatus: newStatus }),
@@ -289,14 +280,14 @@ try {
     return(
       <>
       
-        <div className="invoice_div" style={{marginTop: '100px'}} >
+        <div className="invoice_div" style={{marginTop: '-50px'}} >
             <SlideNav/>
             <div>
             <h2 className="invoice_heading" style={{marginRight:'850px',marginBottom:'10px',marginTop:'60px'}}>My Invoices</h2>
             </div>
             <div className="twobuttons" style={{display:'flex',gap:'15px' }} >
             
-            <button style={{color:'white',background:'#7840B0',marginLeft:'1100px',textAlign:'center',alignItems:'center'}}
+            <button style={{color:'white',background:'#7840B0',marginLeft:'1200px',textAlign:'center',alignItems:'center'}}
             classname='addinvoice' onClick={()=>navigate('/newinvoice')}> + Create new invoice</button>
             </div>
 

@@ -57,9 +57,9 @@ const Navbar = () => {
       <img src="Group.png" alt="Logo" style={{ width: "220px", height: "50px" }} />
       </div>
       <div className="navbar-links-container">
-        <a href=""> Demo Video</a>
+        <a href="https://www.youtube.com"> Demo Video</a>
         <a href="#about">About</a>
-        <a href="">Feedback</a>
+        <a href="#feedback">Feedback</a>
         <a href="#contact">Contact</a>
         <a href="">
           

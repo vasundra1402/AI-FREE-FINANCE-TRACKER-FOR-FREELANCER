@@ -78,10 +78,14 @@ nav {
   font-size: 1.5rem;
   cursor: pointer;
 }
+.home-container{
+  margin-top: -50px;
+}
 .home-banner-container {
   position: relative;
   display: flex;
   padding-top: 3rem;
+  
   
 }
 .home-bannerImage-container {

@@ -13,12 +13,14 @@
     flex: 1;
     padding: 20px;
     padding-right: 12px;
-    margin-top: 1300px;
+    margin-top:-80px;
     overflow-y: auto;
   }
   
   .content-header {
     margin-bottom: 20px;
+    margin-left: 300px;
+    
   }
   
   .invoice-form {
